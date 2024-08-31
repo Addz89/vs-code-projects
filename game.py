@@ -86,11 +86,17 @@ class GameApp:
 # finish this one too adam:
 # this is from walk_past
 
-    def running(self):
+    def home_with_gun(self):
         self.clear_buttons()
 
 
+    def running(self):
+        self.clear_buttons()
+        self.label.config(text="You keep running and see your car, you get in and start the car. You then drive home.")
 
+        self.button1 = tk.tk.Button(self.button_frame, text="Back home", command=self.home_with_gun)
+        
+        self.button1.pack(side="left", padx=20)
 
 
     def walk_past(self):
@@ -102,7 +108,7 @@ class GameApp:
 
         self.button1 = tk.tk.Button(self.button_frame, text="Keep running", command=self.running)
         
-        self.button1.pack(side="left", padx=20)
+        self.button1.pack(side="center", padx=20)
 
     def pick_up(self):
         self.clear_buttons()
@@ -129,13 +135,30 @@ class GameApp:
         self.button2.pack(side="left", padx=20)
         self.button3.pack(side="right", padx=20)
 
+    def get_out_without_gun(self):
+        self.clear_buttons()
+
+    def drive_past_gas(self):
+        self.clear_buttons()
+
+    def keep_driving(self):
+        self.clear_buttons()
+        self.label.config(text="You keep driving past the police car. You See a gas station up ahead. "
+        "Do you keep driving or go in the gas station?")
+
+        self.button2 = tk.Button(self.button_frame, text="Keep driving", command=self.drive_past_gas)
+        self.button3 = tk.button(self.button_frame, text="Get out", command=self.get_out_without_gun)
+
+        self.button2.pack(side="left", padx=20)
+        self.button3.pack(side="right", padx=20)
+
     def car_ride(self):
         self.clear_buttons()
         self.label.config(text="You jump in the car. You try to start it again, "
         "it turns over and you drive down the street. You then see a police car on the side of the road. "
         "Do you pull over or keep driving.")
         self.button2 = tk.Button(self.button_frame, text="Get out", command=self.get_out)
-        self.button3 = tk.Button(self.button_frame, text="Back to house", command=self.stay_home)
+        self.button3 = tk.Button(self.button_frame, text="Keep driving", command=self.keep_driving)
 
         self.button2.pack(side="left", padx=20)
         self.button3.pack(side="right", padx=20)
