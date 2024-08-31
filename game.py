@@ -41,17 +41,33 @@ class GameApp:
 
         self.button2.pack(side="left", padx=20)
         self.button3.pack(side="right", padx=20)
-
+# from gas station adam dont forget man..
     def run_away(self):
         self.clear_buttons()
-        self.label.config(text="You run away from the zombie. ")
+        self.label.config(text="You run away from the zombie. You then start walking back to your car. You get in your car.")
 
+# i have to finish here just remember how to do it adam...
+    def back_home(self):
+        self.clear_buttons()
+
+# after shoot zombie gas station
+    def back_to_car(self):
+        self.clearbuttons()
+        self.label.config(text="You finally get back to the car, and sit and think to urself."
+        "where is your family.? You start the car and drive back home")
+
+# have to fix the right button dont forget to write this:
+# self.button2.pack(side="left", padx=20)
+# self.button3.pack(side="right",padx=20)
 
     def shoot_zombie(self):
         self.clear_buttons()
         self.label.config(text="You slowly grab the gun and aim at the zombie. You start to slowly pull the trigger. "
-        "but then there is a loud BANG!. The zombie then runs towards the bang and you grab some drinks and food and "
+        "but then there is a loud BANG!. The zombie then runs towards the bang and you grab some drinks/food and "
         "then qickly walk out.")
+
+        self.button2 = tk.Button(self.button_frame, text="Back to the car", command=self.back_to_car)
+        self.button3 = tk.Button(self.button_frame, text="")
 
 
 
@@ -67,6 +83,8 @@ class GameApp:
         self.button2.pack(side="left", padx=20)
         self.button3.pack(side="right", padx=20)
 
+# finish this one too adam:
+# this is from walk_past
 
     def running(self):
         self.clear_buttons()
