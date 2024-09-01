@@ -1,6 +1,7 @@
 import tkinter as tk
 from tkinter import messagebox
 import random
+from datetime import datetime
 
 class GameApp:
     def __init__(self, root):
@@ -88,15 +89,17 @@ class GameApp:
 
     def home_with_gun(self):
         self.clear_buttons()
+        time = datetime.now()
+        self.label.config(text=f"You look at the clock and it is , {time}  so you ")
 
 
     def running(self):
         self.clear_buttons()
         self.label.config(text="You keep running and see your car, you get in and start the car. You then drive home.")
 
-        self.button1 = tk.tk.Button(self.button_frame, text="Back home", command=self.home_with_gun)
+        self.button2 = tk.Button(self.button_frame, text="Back home", command=self.home_with_gun)
         
-        self.button1.pack(side="left", padx=20)
+        self.button2.pack(padx=20)
 
 
     def walk_past(self):
@@ -106,9 +109,9 @@ class GameApp:
         "and run as fast as you can."
         "You get away..")
 
-        self.button1 = tk.tk.Button(self.button_frame, text="Keep running", command=self.running)
+        self.button1 = tk.Button(self.button_frame, text="Keep running", command=self.running)
         
-        self.button1.pack(side="center", padx=20)
+        self.button1.pack(padx=20)
 
     def pick_up(self):
         self.clear_buttons()
@@ -147,7 +150,7 @@ class GameApp:
         "Do you keep driving or go in the gas station?")
 
         self.button2 = tk.Button(self.button_frame, text="Keep driving", command=self.drive_past_gas)
-        self.button3 = tk.button(self.button_frame, text="Get out", command=self.get_out_without_gun)
+        self.button3 = tk.Button(self.button_frame, text="Get out", command=self.get_out_without_gun)
 
         self.button2.pack(side="left", padx=20)
         self.button3.pack(side="right", padx=20)
